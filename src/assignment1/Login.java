@@ -13,8 +13,7 @@ public class Login {
     }
     public void setSurname(String Surname){
         this.Surname = Surname;
-    } 
-              
+    }          
     public void setUsername(String Username){
         this.Username = Username;
     }
@@ -44,9 +43,11 @@ public class Login {
     public String getPhone_number() {
         return Phone_number;
     }
+    
     public boolean checkUserName(String Username){
         return this.Username.contains("_") && this.Username.length()<=5;
     }
+    
     public boolean checkPasswordComplexity(String Password){
         return this.Password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@$%&*?])[A-Za-z\\d!@$%&*?]{8,20}$");
     } 
@@ -54,6 +55,7 @@ public class Login {
     public boolean checkCellPhoneNumber(String Phone_number){
         return this.Phone_number.length()==12 && this.Phone_number.startsWith("+27");
     }
+    
     public String RegisterUser(String Username, String Password){
        if (checkUserName(Username) && checkPasswordComplexity(Password)){
            System.out.println("Registration Sucessful");   
@@ -67,9 +69,11 @@ public class Login {
        return " ";
        
     }
+    
     public boolean loginUser(String enteredUsername, String enteredPassword){
         return this.Username.equals(enteredUsername) && this.Password.equals(enteredPassword);
     }
+    
     public String returnLoginStatus(String enteredUsername, String enteredPassword){
         if (loginUser(enteredUsername , enteredPassword)){
             System.out.println("Successfully logged in");
@@ -80,14 +84,7 @@ public class Login {
     }
        return " ";
        
-    }
-    
-    
-    
-    
-    
-    
-    
+    }   
 }    
     
     
